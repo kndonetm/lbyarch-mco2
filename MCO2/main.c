@@ -11,12 +11,15 @@
 // not enough ram for 2^30 :( ey it actually loaded XD
 #define TEST_3_SIZE 536870912
 
-#define TEST_SIZE TEST_3_SIZE
+#define TEST_SIZE TEST_1_SIZE
 
 extern float dotProduct();
 extern float asmDotProduct();
 
 void benchmark() {
+	time_t previousSeedTime = time(0);
+	srand(previousSeedTime);
+
 	double times[30];
 	double asmTimes[30];
 	double averageTime = 0.0;
@@ -26,7 +29,13 @@ void benchmark() {
 
 	for (int iteration = 0; iteration < 30; iteration++) {
 		printf("Iteration %02d: ", iteration + 1);
-		srand(time(0));
+		time_t currentTime = time(0);
+		
+		// prevent repeating test cases from being generated
+		if (currentTime != previousSeedTime) {
+			previousSeedTime = currentTime;
+			srand(previousSeedTime);
+		}
 
 		// alloc arrays for test
 		float* a = (float*)malloc(TEST_SIZE * sizeof(float));
