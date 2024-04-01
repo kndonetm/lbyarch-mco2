@@ -3,6 +3,12 @@
 #include <stdlib.h>
 #include <Windows.h>
 
+//! Change the definition of TEST_SIZE to adjust the size of the vectors created for the benchmark
+//! TEST_1_SIZE: 2^20
+//! TEST_2_SIZE: 2^24
+//! TEST_3_size: 2^29
+#define TEST_SIZE TEST_1_SIZE
+
 // 2^20
 #define TEST_1_SIZE 1048576  
 // 2^24
@@ -10,8 +16,6 @@
 // 2^29S
 // not enough ram for 2^30 :( ey it actually loaded XD
 #define TEST_3_SIZE 536870912
-
-#define TEST_SIZE TEST_1_SIZE
 
 extern float dotProduct();
 extern float asmDotProduct();
