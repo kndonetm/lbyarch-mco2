@@ -3,9 +3,6 @@
 ## Introduction
 Benchmarks for a simple vector dot product implementation written in C and x86-64 assembly.
 
-## Project Specifications
-
-
 ## Usage
 To run, clone the repository and open the project in Visual Studio. Under `main.c`, there are preprocessor definitions which determine the size of the benchmark being run. Set the value of `TEST_SIZE` to `TEST_1_SIZE` to benchmark a vector of size $2^{20}$, `TEST_2_SIZE` for a size of $2^{24}$, and `TEST_3_SIZE` for a size of $2^{29}$.
 
