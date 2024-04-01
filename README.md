@@ -1,5 +1,8 @@
 # MCO2
 
+## Usage
+To run, clone the repository and open the project in Visual Studio. Under `main.c`, there are preprocessor definitions which determine the size of the benchmark being run. Set the value of `TEST_SIZE` to `TEST_1_SIZE` to benchmark a vector of size $2^{20}$, `TEST_2_SIZE` for a size of $2^{24}$, and `TEST_3_SIZE` for a size of $2^{29}$.
+
 ## Benchmarking Results
 Below are the benchmarking results for the dot product operation for vectors of size $2^{20}$, $2^{24}$, and $2^{29}$. $2^{29}$ was used as the largest vector size for the test results due to the hardware being unable to support vectors of size $2^{30}$ or higher.
 
